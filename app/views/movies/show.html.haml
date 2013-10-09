@@ -10,6 +10,25 @@
       %i.icon-youtube-play
       =link_to "Watch the trailer on YouTube", @movie.trailer_url, {target: "blank"}
 
+  #cast
+    %h2.centered Cast
+    %ul
+      - @movie.roles.each do |role|
+        %li
+          = image_tag(role.star.headshot_url)
+          %span.character= "#{ role.character } - #{ role.star.name }"
+
+
+
+      / li
+      /   = image_tag()
+      /   %span.character Kate -
+      /   Angelina Jolie
+      / %li
+      /   = image_tag('http://ia.media-imdb.com/images/M/MV5BMjIyMjc0NTA2M15BMl5BanBnXkFtZTcwMTA4MzQ2OQ@@._V1_SY317_CR11,0,214,317_.jpg')
+      /   %span.character Dade -
+      /   Jonny Lee Miller
+
     #showtimes
       %h2.centered Showtimes
 
