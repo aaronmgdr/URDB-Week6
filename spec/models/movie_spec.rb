@@ -46,7 +46,7 @@ describe Movie do
 
     context "when Movie is not found on Rotten Tomatoes" do
       it "returns nil" do
-        allow(movie).to receive(:rotten_finder).and_return(rotten_finder_return)
+        allow(movie).to receive(:rotten_finder).and_return([])
 
         expect(movie.audience_rating).to eq(nil)
       end
